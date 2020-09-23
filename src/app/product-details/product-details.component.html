@@ -1,0 +1,14 @@
+<div class="example-container" *ngIf="selectedProduct|async; let prod">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <mat-form-field>
+            <input matInput placeholder="Name" [(ngModel)]="prod.name" formControlName="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Description" [(ngModel)]="prod.description" formControlName="description">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Price" [(ngModel)]="prod.price" formControlName="price">
+        </mat-form-field>
+        <button type="submit" mat-stroked-button type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+</div>
